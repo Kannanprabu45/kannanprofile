@@ -702,6 +702,11 @@ textarea:-webkit-autofill:focus {
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 10px;
+    /* Defensive styles to remove unwanted lines */
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
 }
 
 .success-text {
