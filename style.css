@@ -46,6 +46,40 @@ body {
     color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
+    /* Fix: Prevent text cursor (caret) from appearing everywhere */
+    cursor: default;
+}
+
+/* Restore text cursor for inputs */
+input,
+textarea {
+    cursor: text;
+}
+
+/* --- Light Mode Variables --- */
+body.light-mode {
+    --bg-main: #f8fafc;
+    /* Slate-50 */
+    --bg-secondary: #ffffff;
+    /* White */
+    --text-primary: #1e293b;
+    /* Slate-800 */
+    --text-secondary: #475569;
+    /* Slate-600 */
+    --accent: #2563eb;
+    /* Darker blue for better contrast */
+    --accent-glow: rgba(37, 99, 235, 0.2);
+}
+
+body.light-mode .card,
+body.light-mode .timeline-content,
+body.light-mode header {
+    border-color: #e2e8f0;
+    /* Slate-200 */
+}
+
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.9);
 }
 
 h1,
@@ -144,6 +178,33 @@ header {
     background: rgba(15, 23, 42, 0.85);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding: 15px 0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    margin-left: 20px;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-secondary);
+    color: var(--accent);
+    transform: rotate(15deg);
+}
+
+body.light-mode .theme-toggle {
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 nav {
